@@ -1,0 +1,20 @@
+{
+  "name": "kalculator",
+  "version": "0.0.0",
+  "description": "A simple calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kneth/kalculator.git"
+  },
+  "keywords": [],
+  "author": "Kenneth Geisshirt <geisshirt@gmail.com>",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/kneth/kalculator/issues"
+  },
+  "homepage": "https://github.com/kneth/kalculator#readme"
+}
