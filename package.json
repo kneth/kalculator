@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kneth/kalculator/issues"
   },
-  "homepage": "https://github.com/kneth/kalculator#readme"
+  "homepage": "https://github.com/kneth/kalculator#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
