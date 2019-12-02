@@ -18,15 +18,12 @@ function Fraction(x, y) {
     var that = this;
 
     function gcd(a, b) {
-        if (a === b) {
-            return a;
-        } else {
-            if (a > b) {
-                return gcd(a-b, b);
-            } else {
-                return gcd(a, b-a);
-            }
+        while (b != 0) {
+            let t = b;
+            b = a % b;
+            a = t;
         }
+        return a;
     }
 
     var d = gcd(x, y);
@@ -43,11 +40,11 @@ Fraction.prototype.toNumber = function () {
 }
 
 Fraction.prototype.add = function (f) {
-    return new Fraction(this._denominator*f._numerator+f._denominator*this._numerator, this._denominator*f._denominator);
+    return new Fraction(this._denominator*f._numerator + f._denominator*this._numerator, this._denominator*f._denominator);
 };
 
 Fraction.prototype.sub = function (f) {
-    return new Fraction(this._denominator*f._numerator-f._denominator*this._numerator, this._denominator*f._denominator);
+    return new Fraction(f._denominator*this._numerator - this._denominator*f._numerator, this._denominator*f._denominator);
 };
 
 Fraction.prototype.mul = function (f) {
