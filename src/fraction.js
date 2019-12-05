@@ -15,9 +15,10 @@
 
 function Fraction(x, y) {
 
-    var that = this;
+    function _gcd(a, b) {
+        a = (a > 0) ? a :-a;
+        b = (b > 0) ? b :-b;
 
-    function gcd(a, b) {
         while (b != 0) {
             let t = b;
             b = a % b;
@@ -30,7 +31,12 @@ function Fraction(x, y) {
         throw Error('Denominator cannot be 0.');
     }
 
-    var d = gcd(x, y);
+    if ((x < 0 && y < 0) || (x > 0 && y < 0)) {
+        x = -x;
+        y = -y;
+    }
+
+    var d = _gcd(x, y);
     this._numerator = x/d;
     this._denominator = y/d;
 };
