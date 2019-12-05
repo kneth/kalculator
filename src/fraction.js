@@ -26,6 +26,10 @@ function Fraction(x, y) {
         return a;
     }
 
+    if (y === 0) {
+        throw Error('Denominator cannot be 0.');
+    }
+
     var d = gcd(x, y);
     this._numerator = x/d;
     this._denominator = y/d;

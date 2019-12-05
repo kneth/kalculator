@@ -29,6 +29,12 @@
      expect(f2.toNumber()).toBeCloseTo(0.2857142857, 7);
  });
 
+ test('denominator cannot be zero', () => {
+    expect(() => {
+        let f = new Fraction(2, 0);
+    }).toThrow();
+ });
+
  test('add two fractions', () => {
     let f1 = new Fraction(1, 2);
     let f2 = new Fraction(2, 3);
@@ -45,4 +51,22 @@
     expect(f3 instanceof Fraction).toBeTruthy();
     expect(f3._numerator).toBe(1);
     expect(f3._denominator).toBe(6);
+ });
+
+ test('multiply fractions', () => {
+     let f1 = new Fraction(2, 3);
+     let f2 = new Fraction(3, 4);
+     let f3 = f1.mul(f2);
+     expect(f3 instanceof Fraction).toBeTruthy();
+     expect(f3._numerator).toBe(1);
+     expect(f3._denominator).toBe(2);
+ });
+
+ test('divide fractions', () => {
+    let f1 = new Fraction(2, 3);
+    let f2 = new Fraction(3, 4);
+    let f3 = f1.div(f2);
+    expect(f3 instanceof Fraction).toBeTruthy();
+    expect(f3._numerator).toBe(8);
+    expect(f3._denominator).toBe(9);
  });
