@@ -4,7 +4,7 @@
 * None.
 
 ### Enchancements
-* Added `Fraction` class.
+* Added `Fraction` class, including methods `toString()`, `toNumber()`, `add()`, `sub()`, `mul()`, and `div()`.
 
 ### Fixes
 * None.
