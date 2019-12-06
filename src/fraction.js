@@ -15,7 +15,10 @@
 
 function Fraction(x, y) {
 
-    function _gcd(a, b) {
+    let _numerator = 0;
+    let _denominator = 0;
+
+    const _gcd = (a, b) => {
         a = (a > 0) ? a :-a;
         b = (b > 0) ? b :-b;
 
@@ -36,33 +39,54 @@ function Fraction(x, y) {
         y = -y;
     }
 
-    var d = _gcd(x, y);
-    this._numerator = x/d;
-    this._denominator = y/d;
-};
+    let d = _gcd(x, y);
+    _numerator = x/d;
+    _denominator = y/d;
 
-Fraction.prototype.toString = function () {
-    return this._numerator.toString() + "/" + this._denominator.toString();
-}
+    // public methods
+    this.numerator = function () {
+        return _numerator;
+    }
 
-Fraction.prototype.toNumber = function () {
-    return this._numerator / this._denominator;
-}
+    this.denominator = function () {
+        return _denominator;
+    }
 
-Fraction.prototype.add = function (f) {
-    return new Fraction(this._denominator*f._numerator + f._denominator*this._numerator, this._denominator*f._denominator);
-};
+    this.toString = function () {
+        return _numerator.toString() + "/" + _denominator.toString();
+    }
 
-Fraction.prototype.sub = function (f) {
-    return new Fraction(f._denominator*this._numerator - this._denominator*f._numerator, this._denominator*f._denominator);
-};
+    this.toNumber = function () {
+        return _numerator / _denominator;
+    }
 
-Fraction.prototype.mul = function (f) {
-    return new Fraction(this._numerator*f._numerator, this._denominator*f._denominator);
-};
+    this.add = function (f) {
+        if (!(f instanceof Fraction)) {
+            throw Error('Argument is not an instance of Fraction.');
+        }
+        return new Fraction(_denominator*f.numerator() + f.denominator()*_numerator, _denominator*f.denominator());
+    }
 
-Fraction.prototype.div = function (f) {
-    return new Fraction(this._numerator*f._denominator, this._denominator*f._numerator);
+    this.sub = function (f) {
+        if (!(f instanceof Fraction)) {
+            throw Error('Argument is not an instance of Fraction.');
+        }
+        return new Fraction(f.denominator()*_numerator - _denominator*f.numerator(), _denominator*f.denominator());
+    }
+
+    this.mul = function (f) {
+        if (!(f instanceof Fraction)) {
+            throw Error('Argument is not an instance of Fraction.');
+        }
+        return new Fraction(_numerator*f.numerator(), _denominator*f.denominator());
+    }
+
+    this.div = function (f) {
+        if (!(f instanceof Fraction)) {
+            throw Error('Argument is not an instance of Fraction.');
+        }
+        return new Fraction(_numerator*f.denominator(), _denominator*f.numerator());
+    }
 };
 
 module.exports = Fraction;
