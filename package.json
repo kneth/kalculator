@@ -4,7 +4,8 @@
   "description": "A simple calculator",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "doc": "npx jsdoc -P package.json -R README.md src"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/kneth/kalculator#readme",
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "jsdoc": "^3.6.3"
   }
 }
