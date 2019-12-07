@@ -13,6 +13,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+
+ /**
+  * This represents a fraction.
+  *
+  * The constructor will normalize and shorten the fraction.
+  *
+  * @class
+  * @param {number} x - numerator
+  * @param {number} y - denominator
+  * @throws {Error}
+  * @since 0.1.0
+  */
 function Fraction(x, y) {
 
     let _numerator = 0;
@@ -43,23 +55,54 @@ function Fraction(x, y) {
     _numerator = x/d;
     _denominator = y/d;
 
-    // public methods
+    /**
+     * Getter for numerator.
+     *
+     * @returns {number} numerator.
+     * @since 0.1.0
+     */
     this.numerator = function () {
         return _numerator;
     }
 
+    /**
+     * Getter for denominator.
+     *
+     * @returns {number} denominator.
+     * @since 0.1.0
+     */
     this.denominator = function () {
         return _denominator;
     }
 
+    /**
+     * A string representation of a fraction.
+     *
+     * @returns {string} the fraction as a string.
+     * @since 0.1.0
+     */
     this.toString = function () {
         return _numerator.toString() + "/" + _denominator.toString();
     }
 
+    /**
+     * Calculate a floating-point number of the representation.
+     *
+     * @returns {number} a floating-point representation of the fraction.
+     * @since 0.1.0
+     */
     this.toNumber = function () {
         return _numerator / _denominator;
     }
 
+    /**
+     * Add two fractions.
+     *
+     * @param {Fraction} f Right side of expression.
+     * @returns {Fraction} The sum.
+     * @throws {Error}
+     * @since 0.1.0
+     */
     this.add = function (f) {
         if (!(f instanceof Fraction)) {
             throw Error('Argument is not an instance of Fraction.');
@@ -67,13 +110,28 @@ function Fraction(x, y) {
         return new Fraction(_denominator*f.numerator() + f.denominator()*_numerator, _denominator*f.denominator());
     }
 
+    /**
+     * Subtract one fraction from another fraction
+     *
+     * @param {Fraction} f Right side of expression.
+     * @returns {Fraction} The difference.
+     * @throws {Error}
+     * @since 0.1.0
+     */
     this.sub = function (f) {
         if (!(f instanceof Fraction)) {
             throw Error('Argument is not an instance of Fraction.');
         }
         return new Fraction(f.denominator()*_numerator - _denominator*f.numerator(), _denominator*f.denominator());
     }
-
+    /**
+     * Multiply two fractions.
+     *
+     * @param {Fraction} f Right side of expression.
+     * @returns {Fraction} The product.
+     * @throws {Error}
+     * @since 0.1.0
+     */
     this.mul = function (f) {
         if (!(f instanceof Fraction)) {
             throw Error('Argument is not an instance of Fraction.');
@@ -81,6 +139,14 @@ function Fraction(x, y) {
         return new Fraction(_numerator*f.numerator(), _denominator*f.denominator());
     }
 
+    /**
+     * Divide one fraction by another fraction.
+     *
+     * @param {Fraction} f Right side of expression.
+     * @returns {Fraction} The result.
+     * @throws {Error}
+     * @since 0.1.0
+     */
     this.div = function (f) {
         if (!(f instanceof Fraction)) {
             throw Error('Argument is not an instance of Fraction.');
