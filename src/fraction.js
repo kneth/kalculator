@@ -153,6 +153,6 @@ function Fraction(x, y) {
         }
         return new Fraction(_numerator*f.denominator(), _denominator*f.numerator());
     }
-};
+}
 
 module.exports = Fraction;

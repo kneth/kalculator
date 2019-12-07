@@ -41,7 +41,7 @@
 
  test('denominator cannot be zero', () => {
     expect(() => {
-        let f = new Fraction(2, 0);
+        new Fraction(2, 0);
     }).toThrow();
  });
 
@@ -58,7 +58,7 @@
     expect(f5.numerator()).toBe(-1);
     expect(f5.denominator()).toBe(6);
 
-    let f6 = { _denominator: 1, _denominator: 3 };
+    let f6 = { _numerator: 1, _denominator: 3 };
     expect(() => {
        f4.add(f6);
     }).toThrow();
@@ -72,7 +72,7 @@
     expect(f3.numerator()).toBe(1);
     expect(f3.denominator()).toBe(6);
 
-    let f4 = { _denominator: 1, _denominator: 3 };
+    let f4 = { _numerator: 1, _denominator: 3 };
     expect(() => {
        f2.sub(f4);
     }).toThrow();
@@ -86,7 +86,7 @@
      expect(f3.numerator()).toBe(1);
      expect(f3.denominator()).toBe(2);
 
-     let f4 = { _denominator: 1, _denominator: 3 };
+     let f4 = { _numerator: 1, _denominator: 3 };
      expect(() => {
         f2.mul(f4);
      }).toThrow();
@@ -100,7 +100,7 @@
     expect(f3.numerator()).toBe(8);
     expect(f3.denominator()).toBe(9);
 
-    let f4 = { _denominator: 1, _denominator: 3 };
+    let f4 = { _numerator: 1, _denominator: 3 };
     expect(() => {
        f2.div(f4);
     }).toThrow();
