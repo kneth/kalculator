@@ -1,0 +1,14 @@
+# previous releases
+*.tgz
+
+# jsdoc generated output
+out/
+
+# all tests
+src/*.spec.js
+
+# github related files
+.github/
+
+# configurations files
+.eslintrc.json
