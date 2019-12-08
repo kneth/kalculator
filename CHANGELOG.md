@@ -1,4 +1,4 @@
-## X.Y.Z (yyyy-MM-dd)
+## 0.1.0 (2019-12-08)
 
 ### Breaking changes
 * None.
