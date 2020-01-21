@@ -21,5 +21,13 @@
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error"
     },
+    "overrides": [
+        {
+            "files": ["parser.js"],
+            "rules": {
+                "no-unused-vars": "off"
+            }
+        }
+    ],
     "plugins": ["jest"]
 }
