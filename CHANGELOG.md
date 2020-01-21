@@ -5,6 +5,7 @@
 
 ### Enhancements
 * Added grammar for simple calculator.
+* Added simple calculator: `kalc`.
 
 ### Fixes
 * None.
