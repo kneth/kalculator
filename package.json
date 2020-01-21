@@ -8,7 +8,7 @@
     "doc": "npx jsdoc -P package.json -R README.md src",
     "lint": "npx eslint src",
     "generate-parser": "cd src && npx nearleyc -o parser.js parser.ne",
-    "build": "npm run doc && npm run lint"
+    "build": "npm run doc && npm run generate-parser && npm run lint"
   },
   "repository": {
     "type": "git",
