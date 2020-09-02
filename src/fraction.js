@@ -40,7 +40,7 @@ function Fraction(x, y) {
             a = t;
         }
         return a;
-    }
+    };
 
     if (y === 0) {
         throw Error('Denominator cannot be 0.');
@@ -63,17 +63,17 @@ function Fraction(x, y) {
      */
     this.numerator = function () {
         return _numerator;
-    }
+    };
 
     /**
-     * Getter for denominator.
+     * getter for denominator.
      *
      * @returns {number} denominator.
      * @since 0.1.0
      */
     this.denominator = function () {
         return _denominator;
-    }
+    };
 
     /**
      * A string representation of a fraction.
@@ -83,7 +83,7 @@ function Fraction(x, y) {
      */
     this.toString = function () {
         return _numerator.toString() + "/" + _denominator.toString();
-    }
+    };
 
     /**
      * Calculate a floating-point number of the representation.
@@ -93,7 +93,7 @@ function Fraction(x, y) {
      */
     this.toNumber = function () {
         return _numerator / _denominator;
-    }
+    };
 
     /**
      * Add two fractions.
@@ -108,7 +108,7 @@ function Fraction(x, y) {
             throw Error('Argument is not an instance of Fraction.');
         }
         return new Fraction(_denominator*f.numerator() + f.denominator()*_numerator, _denominator*f.denominator());
-    }
+    };
 
     /**
      * Subtract one fraction from another fraction
@@ -123,7 +123,7 @@ function Fraction(x, y) {
             throw Error('Argument is not an instance of Fraction.');
         }
         return new Fraction(f.denominator()*_numerator - _denominator*f.numerator(), _denominator*f.denominator());
-    }
+    };
     /**
      * Multiply two fractions.
      *
@@ -137,7 +137,7 @@ function Fraction(x, y) {
             throw Error('Argument is not an instance of Fraction.');
         }
         return new Fraction(_numerator*f.numerator(), _denominator*f.denominator());
-    }
+    };
 
     /**
      * Divide one fraction by another fraction.
@@ -152,7 +152,7 @@ function Fraction(x, y) {
             throw Error('Argument is not an instance of Fraction.');
         }
         return new Fraction(_numerator*f.denominator(), _denominator*f.numerator());
-    }
+    };
 }
 
 module.exports = Fraction;
